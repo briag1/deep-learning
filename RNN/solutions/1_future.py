@@ -12,7 +12,7 @@ class RNN(nn.Module):
             hidden = self.rnn1(signal, hidden)
             output = self.linear(hidden)
             outputs += [output]
-        for i in range(1, future):# if we should predict the future
+        for i in range(1, future+1):# if we should predict the future
             hidden = self.rnn1(output, hidden)
             output = self.linear(hidden)
             outputs += [output]
